@@ -12,21 +12,118 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Mars Information</h1>
-
-            <!-- Create a button to trigger the scrape -->
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>
-
+        <div class="jumbotron text-center">           
+                <h1>Mars Information</h1>
+                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>           
         </div>
-        
+        <!-- display the latest Mars news from the scrape function -->
         <div class="row">
             <div class="col-md-12">
-                <h4 class="heading">{{weather.forecast}}</h4>
-                <small>{{weather.time}}</small>
+                <h1 class="heading">Latest Mars News</h1>
+                <h4 class="heading">{{mars.title}}</h4>
+                <p>{{mars.body}}</p>
             </div>
         </div>   
 
+        <!-- display the featured image scraped from the JPL website -->
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="heading">Featured Image</h1>
+                <img width="640" src={{mars.feat_img}} alt="featured image"/>
+                <p>{{mars.feat_img}}</p>
+             </div>
+        </div>
+
+        <!-- display the latest Mars weather tweet on left half of page -->
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="heading">Mars Weather</h1>
+                <p>{{mars.weather}}</p>
+             </div>
+
+            <!-- display the Mars facts table of the right half of page -->
+             <div class="col-md-6">
+                 <h1>Mars Facts</h1>
+                <table border="1" class="dataframe">
+                    <thead>
+                      <tr style="text-align: right;">                       
+                        <th>Value</th>
+                        <th>Dimension</th>                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Equatorial Diameter:</th>
+                        <td>6,792 km</td>
+                      </tr>
+                      <tr>
+                        <th>Polar Diameter:</th>
+                        <td>6,752 km</td>
+                      </tr>
+                      <tr>
+                        <th>Mass:</th>
+                        <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                      </tr>
+                      <tr>
+                        <th>Moons:</th>
+                        <td>2 (Phobos &amp; Deimos)</td>
+                      </tr>
+                      <tr>
+                        <th>Orbit Distance:</th>
+                        <td>227,943,824 km (1.52 AU)</td>
+                      </tr>
+                      <tr>
+                        <th>Orbit Period:</th>
+                        <td>687 days (1.9 years)</td>
+                      </tr>
+                      <tr>
+                        <th>Surface Temperature:</th>
+                        <td>-153 to 20 �C</td>
+                      </tr>
+                      <tr>
+                        <th>First Record:</th>
+                        <td>2nd millennium BC</td>
+                      </tr>
+                      <tr>
+                        <th>Recorded By:</th>
+                        <td>Egyptian astronomers</td>
+                      </tr>
+                    </tbody>
+                  </table>
+             </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+              <h1 class="heading text-center">Mars Hemispheres</h1>
+          </div>
+      </div>   
+
+      <!-- display the Mars hemispheres images in two rows of two images each -->
+        <div class="row">
+            <div class="col-md-6  text-center">
+                <h4 class="heading">{{mars.hemi_img.0.title}}</h4>
+                <img width="400" src={{mars.hemi_img.0.url}} alt="featured image"/>
+                <h4>   </h4>
+            </div>
+             <div class="col-md-6  text-center">
+                <h4 class="heading">{{mars.hemi_img.1.title}}</h4>
+                <img width="400" src={{mars.hemi_img.1.url}} alt="featured image"/>
+                <h4>   </h4>
+             </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h4 class="heading">{{mars.hemi_img.2.title}}</h4>
+                <img width="400" src={{mars.hemi_img.2.url}} alt="featured image"/>
+
+            </div>
+             <div class="col-md-6 text-center">
+                <h4 class="heading">{{mars.hemi_img.3.title}}</h4>
+                <img width="400" src={{mars.hemi_img.2.url}} alt="featured image"/>
+            </div>
+        </div>
     </div>
 
 </body>

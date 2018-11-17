@@ -30,8 +30,6 @@ def scrape():
     # Store results into a dictionary
     mars.update({}, mars_data, upsert=True)
 
-    # Insert forecast into database
-
     # Redirect back to home page
     return redirect("/", code=302)
 
